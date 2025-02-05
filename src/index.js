@@ -86,7 +86,7 @@ createWaterDropDataGenerator()
         let pointB
         const pathSeries = chart3D
             .addPointSeries({ individualPointSizeEnabled: true })
-            .setMouseInteractions(false)
+            .setPointerEvents(false)
             .setAutoScrollingEnabled(false)
         const updtPath = () => {
             const points = []
@@ -114,7 +114,7 @@ createWaterDropDataGenerator()
             pathSeries.clear().add(points)
             projection2D.clear().appendJSON(points2D)
         }
-        surfaceSeries3D.onMouseMove((_, event, hit) => {
+        surfaceSeries3D.addEventListener('pointermove', (event, hit) => {
             if (!pointA || pointA.preview) {
                 pointA = { ...hit, preview: true }
             } else if (!pointB || pointB.preview) {
@@ -122,7 +122,7 @@ createWaterDropDataGenerator()
             }
             updtPath()
         })
-        surfaceSeries3D.onMouseClick((_, event, hit) => {
+        surfaceSeries3D.addEventListener('click', (event, hit) => {
             if (!pointA || pointA.preview) {
                 pointA = hit
             } else if (!pointB || pointB.preview) {
