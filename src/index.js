@@ -7,7 +7,7 @@ const lcjs = require('@lightningchart/lcjs')
 // Import xydata
 const xydata = require('@lightningchart/xydata')
 
-const { lightningChart, LUT, PalettedFill, emptyLine, ColorShadingStyles, LegendBoxBuilders, regularColorSteps, SolidLine, Themes } = lcjs
+const { lightningChart, LUT, PalettedFill, emptyLine, ColorShadingStyles, regularColorSteps, SolidLine, Themes, LegendPosition } = lcjs
 const { createWaterDropDataGenerator } = xydata
 
 const HEATMAP_COLUMNS = 500
@@ -33,6 +33,7 @@ const lc = lightningChart({
         })
 const chart3D = lc
     .Chart3D({
+        legend: { position: LegendPosition.RightCenter },
         container: containerChart1,
         theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
     })
@@ -44,6 +45,7 @@ const chart3D = lc
 
 const chart2D = lc
     .ChartXY({
+        legend: { visible: false },
         container: containerChart2,
         // theme: Themes.darkGold
     })
@@ -74,18 +76,16 @@ createWaterDropDataGenerator()
             .setColorShadingStyle(new ColorShadingStyles.Phong())
             .invalidateHeightMap(data)
 
-        const projection2D = chart2D.addPointLineAreaSeries({ dataPattern: 'ProgressiveX' }).setAreaFillStyle(palettedFill)
+        const projection2D = chart2D.addPointLineAreaSeries().setAreaFillStyle(palettedFill)
 
         chart2D.axisY.setStrokeStyle(new SolidLine({ thickness: 3, fillStyle: palettedFill }))
-
-        const legend = chart3D.addLegendBox(LegendBoxBuilders.VerticalLegendBox).add(chart3D)
 
         // Custom interaction;
         // Click to draw path along 3D surface heatmap.
         let pointA
         let pointB
         const pathSeries = chart3D
-            .addPointSeries({ individualPointSizeEnabled: true })
+            .addPointSeries({ individualPointSizeEnabled: true, legend: null })
             .setPointerEvents(false)
             .setAutoScrollingEnabled(false)
         const updtPath = () => {

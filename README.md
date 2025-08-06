@@ -37,7 +37,6 @@ The same data is also displayed in a 2D chart below.
 * [Color shading styles (3D)]
 * [Surface Grid Series]
 * [Heatmap Grid Series]
-* [Legend Box]
 
 
 ## Support
@@ -61,13 +60,12 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2022. All rights reserved.
 
 
-[3D chart]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/Chart3D.html
-[3D axis]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/Axis3D.html
-[Paletted Fill]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/PalettedFill.html
-[Color lookup table]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/LUT.html
-[Color RGBA factory]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/functions/ColorRGBA.html
-[Color shading styles (3D)]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/variables/ColorShadingStyles.html
-[Surface Grid Series]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/SurfaceGridSeries3D.html
-[Heatmap Grid Series]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/HeatmapGridSeriesIntensityValues.html
-[Legend Box]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/Chart.html#addLegendBox
+[3D chart]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/classes/Chart3D.html
+[3D axis]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/classes/Axis3D.html
+[Paletted Fill]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/classes/PalettedFill.html
+[Color lookup table]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/classes/LUT.html
+[Color RGBA factory]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/functions/ColorRGBA.html
+[Color shading styles (3D)]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/variables/ColorShadingStyles.html
+[Surface Grid Series]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/classes/SurfaceGridSeries3D.html
+[Heatmap Grid Series]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/classes/HeatmapGridSeriesIntensityValues.html
 
