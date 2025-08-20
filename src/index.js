@@ -40,8 +40,9 @@ const chart3D = lc
     .setTitle('Click twice to project path to 2D')
     .setBoundingBox({ x: 1, z: 1, y: 0.4 })
     .setCameraAutomaticFittingEnabled(false)
-    .setCameraLocation({ x: 0.23, z: 0.44, y: 0.5 })
+    .setCameraLocation({ x: 2.3/5, z: 4.4/5, y: 5/5 })
     .setCursorMode(undefined)
+    .setProjection('orthographic')
 
 const chart2D = lc
     .ChartXY({
