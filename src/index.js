@@ -40,7 +40,7 @@ const chart3D = lc
     .setTitle('Click twice to project path to 2D')
     .setBoundingBox({ x: 1, z: 1, y: 0.4 })
     .setCameraAutomaticFittingEnabled(false)
-    .setCameraLocation({ x: 2.3/5, z: 4.4/5, y: 5/5 })
+    .setCameraLocation({ x: 2.3 / 5, z: 4.4 / 5, y: 5 / 5 })
     .setCursorMode(undefined)
     .setProjection('orthographic')
 
@@ -94,6 +94,10 @@ createWaterDropDataGenerator()
             const points2D = []
             if (pointA) {
                 points.push({ ...pointA, size: 15 })
+                surfaceSeries3D.setContours({
+                    valueSource: 'y',
+                    levels: [{ value: pointA.y }],
+                })
             }
             if (pointA && pointB) {
                 points2D.push({ x: 0, y: pointA.y })
@@ -111,6 +115,10 @@ createWaterDropDataGenerator()
                 }
                 points.push({ ...pointB, size: 15 })
                 points2D.push({ x: length, y: pointB.y })
+                surfaceSeries3D.setContours({
+                    valueSource: 'y',
+                    levels: [{ value: pointA.y }, { value: pointB.y }],
+                })
             }
             pathSeries.clear().add(points)
             projection2D.clear().appendJSON(points2D)
@@ -131,6 +139,7 @@ createWaterDropDataGenerator()
             } else {
                 pointA = undefined
                 pointB = undefined
+                surfaceSeries3D.setContours(undefined)
             }
             updtPath()
         })
