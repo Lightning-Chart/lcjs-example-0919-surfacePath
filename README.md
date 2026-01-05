@@ -26,7 +26,26 @@ After user has clicked on two locations along the surface, the application highl
 
 The same data is also displayed in a 2D chart below.
 
-Additionally, the example showcases the alternate Orthographic 3D projection mode.
+Additionally, the example showcases the alternate **Orthographic 3D projection mode**. 
+The projection type is set with `setProjection` method when creating the 3D chart. The default type is `perspective`.
+
+The Surface Grid Series **contour lines** can be enabled with `setContours` method. 
+Each contour level can have individual stroke style. 
+It is also possible to choose between two different sources for contour data, `intensity` and `y`.
+
+```js
+ // Example syntax
+ heatmapSeries.setContours({
+     valueSource: 'y'
+     levels: [
+         { value: 10 },
+         {
+             value: 40,
+             strokeStyle: new SolidLine({ thickness: 1, fillStyle: new SolidFill({ color: ColorRGBA(0, 0, 0) }) })
+         }
+     ]
+ })
+```
 
 ## API Links
 
@@ -38,6 +57,8 @@ Additionally, the example showcases the alternate Orthographic 3D projection mod
 * [Color shading styles (3D)]
 * [Surface Grid Series]
 * [Heatmap Grid Series]
+* [Projection type]
+* [Contour lines]
 
 
 ## Support
@@ -69,4 +90,6 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 [Color shading styles (3D)]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/variables/ColorShadingStyles.html
 [Surface Grid Series]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/SurfaceGridSeries3D.html
 [Heatmap Grid Series]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/HeatmapGridSeriesIntensityValues.html
+[Projection type]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/Chart3D.html#setProjection
+[Contour lines]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/SurfaceGridSeries3D.html#setContours
 
