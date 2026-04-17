@@ -1,3 +1,14 @@
+window.lcjsSmallView = window.devicePixelRatio >= 2
+if (!window.__lcjsDebugOverlay) {
+    window.__lcjsDebugOverlay = document.createElement('div')
+    window.__lcjsDebugOverlay.style.cssText = 'position:fixed;top:10px;left:10px;background:rgba(0,0,0,0.7);color:#fff;padding:4px 8px;z-index:99999;font:12px monospace;pointer-events:none'
+    const attach = () => { if (document.body && !window.__lcjsDebugOverlay.parentNode) document.body.appendChild(window.__lcjsDebugOverlay) }
+    attach()
+    setInterval(() => {
+        attach()
+        window.__lcjsDebugOverlay.textContent = window.innerWidth + 'x' + window.innerHeight + ' dpr=' + window.devicePixelRatio + ' small=' + window.lcjsSmallView
+    }, 500)
+}
 /**
  * Example showcasing the Surface Grid Series feature of LightningChart JS.
  */
@@ -37,19 +48,9 @@ const chart3D = lc
         container: containerChart1,
         theme: (() => {
     const t = Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined
-    const smallView = window.devicePixelRatio >= 2
-    if (!window.__lcjsDebugOverlay) {
-        window.__lcjsDebugOverlay = document.createElement('div')
-        window.__lcjsDebugOverlay.style.cssText = 'position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);color:#fff;padding:4px 8px;z-index:99999;font:12px monospace;pointer-events:none'
-        if (document.body) document.body.appendChild(window.__lcjsDebugOverlay)
-        setInterval(() => {
-            if (!window.__lcjsDebugOverlay.parentNode && document.body) document.body.appendChild(window.__lcjsDebugOverlay)
-            window.__lcjsDebugOverlay.textContent = window.innerWidth + 'x' + window.innerHeight + ' dpr=' + window.devicePixelRatio + ' small=' + (window.devicePixelRatio >= 2)
-        }, 500)
-    }
-    return t && smallView ? lcjs.scaleTheme(t, 0.5) : t
+    return t && window.lcjsSmallView ? lcjs.scaleTheme(t, 0.5) : t
 })(),
-textRenderer: window.devicePixelRatio >= 2 ? lcjs.htmlTextRenderer : undefined,
+textRenderer: window.lcjsSmallView ? lcjs.htmlTextRenderer : undefined,
     })
     .setTitle('Click twice to project path to 2D')
     .setBoundingBox({ x: 1, z: 1, y: 0.4 })
@@ -62,7 +63,11 @@ const chart2D = lc
     .ChartXY({
         legend: { visible: false },
         container: containerChart2,
-        // theme: Themes.darkGold
+        theme: (() => {
+    const t = Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined
+    return t && window.lcjsSmallView ? lcjs.scaleTheme(t, 0.5) : t
+})(),
+textRenderer: window.lcjsSmallView ? lcjs.htmlTextRenderer : undefined,
     })
     .setTitle('')
 chart2D.forEachAxis((axis) => axis.setAnimationScroll(false))
