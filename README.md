@@ -79,17 +79,17 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 [3]: https://stackoverflow.com/questions/tagged/lightningchart
 [4]: https://lightningchart.com/support-services/
 
-© LightningChart Ltd 2009-2025. All rights reserved.
+© LightningChart Ltd 2009-2026. All rights reserved.
 
 
-[3D chart]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/Chart3D.html
-[3D axis]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/Axis3D.html
-[Paletted Fill]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/PalettedFill.html
-[Color lookup table]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/LUT.html
-[Color RGBA factory]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/functions/ColorRGBA.html
-[Color shading styles (3D)]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/variables/ColorShadingStyles.html
-[Surface Grid Series]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/SurfaceGridSeries3D.html
-[Heatmap Grid Series]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/HeatmapGridSeriesIntensityValues.html
-[Projection type]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/Chart3D.html#setProjection
-[Contour lines]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/SurfaceGridSeries3D.html#setContours
+[3D chart]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/classes/Chart3D.html
+[3D axis]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/classes/Axis3D.html
+[Paletted Fill]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/classes/PalettedFill.html
+[Color lookup table]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/classes/LUT.html
+[Color RGBA factory]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/functions/ColorRGBA.html
+[Color shading styles (3D)]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/variables/ColorShadingStyles.html
+[Surface Grid Series]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/classes/SurfaceGridSeries3D.html
+[Heatmap Grid Series]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/classes/HeatmapGridSeriesIntensityValues.html
+[Projection type]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/classes/Chart3D.html#setProjection
+[Contour lines]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/classes/SurfaceGridSeries3D.html#setContours
 
